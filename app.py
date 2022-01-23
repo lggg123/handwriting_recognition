@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from bidict import bidict
 from random import choice
 
@@ -27,7 +27,12 @@ def add_data_get():
 
 @app.route('/add-data', methods=['POST'])
 def add_data_post():
+
+    print(request.form)
+
     return render_template("addData.html")
+
+    
 
 @app.route('/practice', methods=['GET'])
 def practice_get():
