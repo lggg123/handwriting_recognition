@@ -9,8 +9,11 @@
     <div>
         <canvas id="canvas" width="200" height="200"></canvas>
     </div>
-    <div>
-        <p>Write an uppercase "{{letter.lower()}}"</p>
+    <div style="padding: 1rem;">
+        {% if message %}
+            <p style="font-size: 0.75rem;">{{message}}</p>
+        {% endif %}
+        <p style="margin-top: 0.5rem;">Write an uppercase "{{letter.lower()}}"</p>
     </div>
     <div>
         <form id="add-data-form" action="add-data" method="POST">
