@@ -1,0 +1,40 @@
+html {
+    background-color: rgb(231, 231, 231);
+    font-family: sans-serif;
+    /*giving the html padding gives it a spacing so the letters
+    objects aren't crushed into the left*/
+    padding: 1rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* its not until you align the items is when the buttons 
+    do not span the entire width of the page*/
+    align-items: center;
+}
+
+.box {
+    /* display and flex-direction here give the button and text its proper
+    width*/
+    display: flex;
+    flex-direction: column;
+    /* justifying and aligning gives it its proper alignment and spacing*/
+    justify-content: center;
+    align-items: center;
+}
+
+/* gives the spacing needed to give it proper margin*/
+.box p {
+    margin-top: 1rem;
+}
+
+.title {
+    padding: 2rem 0 1rem 0;
+}
+
+#canvas {
+    background-color: white;
+    border: 1px solid gray;
+}
