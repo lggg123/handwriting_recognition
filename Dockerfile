@@ -1,15 +1,9 @@
-# syntax=docker/dockerfile:1
+FROM tensorflow/tensorflow
 
-FROM python:3.9
-
-WORKDIR /python-docker
-
-COPY requirements.txt requirements.txt
-RUN apt-get update
-RUN apt-get -y install gcc
+COPY . /app
+COPY ./requirements.txt /app/requirements.txt
+WORKDIR /app
+EXPOSE 8000:8000
+RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
-
-COPY . .
-ENV FLASK_APP=application.py
-
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
